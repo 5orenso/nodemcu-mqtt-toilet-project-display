@@ -22,5 +22,14 @@ Weee :-)
 
 ... more to come.
 
-# Contribute
+
+## Other resources
+
+* [Getting started with Arduino, NodeMCU or Wemos D1 mini](https://github.com/5orenso/arduino-getting-started)
+* [Toilet project sensors](https://github.com/5orenso/nodemcu-mqtt-toilet-project)
+* [Bitbar toilet menu plugin](https://github.com/TeliaSoneraNorge/iot-hackaton-toilet-u1-bitbar)
+
+
+## Contribute
+
 Please contribute with pull-requests.

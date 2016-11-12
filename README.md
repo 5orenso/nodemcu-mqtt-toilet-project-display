@@ -4,6 +4,8 @@ __This is work in progress. I've just uploaded my CRUD project files for now. Pl
 
 ### TL;DR
 
+![Toilet project light sketch](img/fritzing-toilet-project-leds.jpg)
+
 * Hook up your lights: `RED` = `D2`, `GREEN` = `D1` and `YELLOW` = `D3`
 * Run a couple of commands:
 ```bash

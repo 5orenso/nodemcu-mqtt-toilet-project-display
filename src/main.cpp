@@ -91,30 +91,34 @@ void callback(char* topic, byte* payload, unsigned int length) {
     }
 
     if (LISTEN_TO_CHIP == thisChipId) {
-        if (switchStatus == 1) {
+        // Is it occupied or not?
+        if (switchStatus == 2) {
             if (VERBOSE) {
                 Serial.println("Red light on!");
             }
             digitalWrite(PIN_GREEN_LED, 0);
             digitalWrite(PIN_RED_LED, 1);
-            digitalWrite(PIN_YELLOW_LED, 0);
-        } else {
-            if (motionStatus == 1) {
-                if (VERBOSE) {
-                    Serial.println("Yellow light on!");
-                }
-                digitalWrite(PIN_GREEN_LED, 1);
-                digitalWrite(PIN_RED_LED, 0);
-                digitalWrite(PIN_YELLOW_LED, 1);
-            } else {
-                if (VERBOSE) {
-                    Serial.println("Green light on!");
-                }
-                digitalWrite(PIN_GREEN_LED, 1);
-                digitalWrite(PIN_RED_LED, 0);
-                digitalWrite(PIN_YELLOW_LED, 0);
+        } else if (switchStatus == 1) {
+            if (VERBOSE) {
+                Serial.println("Green light on!");
             }
+            digitalWrite(PIN_GREEN_LED, 1);
+            digitalWrite(PIN_RED_LED, 0);
         }
+
+        // Are someone in line
+        if (motionStatus == 2) {
+            if (VERBOSE) {
+                Serial.println("Yellow light on!");
+            }
+            digitalWrite(PIN_YELLOW_LED, 1);
+        } else if (motionStatus == 1) {
+            if (VERBOSE) {
+                Serial.println("Yellow light off!");
+            }
+            digitalWrite(PIN_YELLOW_LED, 0);
+        }
+
     }
 }
 
